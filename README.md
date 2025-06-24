@@ -63,7 +63,7 @@ ThesisOne/
 
 ## Support & Contact
 - For issues or feature requests, please open an issue in this repository.
-- For direct support, contact the maintainer at [your-email@example.com].
+- For direct support, contact the maintainer at [iemaildivyansh@gmail.com].
 
 ---
 Enjoy creating stunning presentations with SlideWise! 
