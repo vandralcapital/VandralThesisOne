@@ -191,7 +191,7 @@ const PresentationViewer = () => {
   useEffect(() => {
     const fetchPresentation = async () => {
       try {
-        const response = await axios.get(`http://localhost:5001/api/presentations/${id}`, {
+        const response = await axios.get(`https://vandralthesisone.onrender.com/api/presentations/${id}`, {
           headers: {
             'auth-token': localStorage.getItem('token')
           }
@@ -284,7 +284,7 @@ const PresentationViewer = () => {
   const savePresentation = async (updatedPresentation) => {
     try {
       await axios.put(
-        `http://localhost:5001/api/presentations/${id}`,
+        `https://vandralthesisone.onrender.com/api/presentations/${id}`,
         updatedPresentation,
         { headers: { 'auth-token': localStorage.getItem('token') } }
       );

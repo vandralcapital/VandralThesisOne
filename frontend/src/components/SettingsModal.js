@@ -20,10 +20,10 @@ const SettingsModal = ({ onClose, user, workspace, onUpdateWorkspace }) => {
     if (workspace) {
       try {
         const config = { headers: { 'auth-token': localStorage.getItem('token') } };
-        const membersRes = await axios.get(`http://localhost:5001/api/workspaces/${workspace._id}`, config);
+        const membersRes = await axios.get(`https://vandralthesisone.onrender.com/api/workspaces/${workspace._id}`, config);
         setMembers(membersRes.data.members);
 
-        const invitesRes = await axios.get(`http://localhost:5001/api/workspaces/${workspace._id}/invitations`, config);
+        const invitesRes = await axios.get(`https://vandralthesisone.onrender.com/api/workspaces/${workspace._id}/invitations`, config);
         setPendingInvites(invitesRes.data);
       } catch (error) {
         toast.error('Could not load workspace members.');
@@ -53,7 +53,7 @@ const SettingsModal = ({ onClose, user, workspace, onUpdateWorkspace }) => {
   const handleSendInvite = async () => {
     if (!inviteEmail) return toast.error('Please enter an email address.');
     try {
-      const res = await axios.post('http://localhost:5001/api/invitations',
+      const res = await axios.post('https://vandralthesisone.onrender.com/api/invitations',
         { recipientEmail: inviteEmail, workspaceId: workspace._id },
         { headers: { 'auth-token': localStorage.getItem('token') } }
       );
@@ -76,7 +76,7 @@ const SettingsModal = ({ onClose, user, workspace, onUpdateWorkspace }) => {
     }
 
     try {
-      const res = await axios.post('http://localhost:5001/api/user/change-password', 
+      const res = await axios.post('https://vandralthesisone.onrender.com/api/user/change-password', 
         { oldPassword, newPassword },
         { headers: { 'auth-token': localStorage.getItem('token') } }
       );

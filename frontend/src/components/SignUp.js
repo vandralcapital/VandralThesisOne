@@ -30,7 +30,7 @@ const SignUp = () => {
         e.preventDefault();
         setLoading(true);
         try {
-            const res = await axios.post('http://localhost:5001/api/auth/register', formData);
+            const res = await axios.post('https://vandralthesisone.onrender.com/api/auth/register', formData);
             console.log(res.data);
             toast.success('Registration successful! Please login.');
             navigate('/login');

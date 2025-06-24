@@ -37,7 +37,7 @@ const Dashboard = () => {
             'auth-token': token,
           },
         };
-        const res = await axios.get('http://localhost:5001/api/user/me', config);
+        const res = await axios.get('https://vandralthesisone.onrender.com/api/user/me', config);
         setUser(res.data);
         if (res.data.workspaces && res.data.workspaces.length > 0) {
           setActiveWorkspace(res.data.workspaces[0]);
@@ -75,7 +75,7 @@ const Dashboard = () => {
     try {
       // NOTE: Logo upload functionality has been temporarily removed
       // and will need to be re-implemented with the new data structure.
-      const res = await axios.put(`http://localhost:5001/api/workspaces/${activeWorkspace._id}`, 
+      const res = await axios.put(`https://vandralthesisone.onrender.com/api/workspaces/${activeWorkspace._id}`, 
         { name: newName },
         { headers: { 'auth-token': localStorage.getItem('token') } }
       );

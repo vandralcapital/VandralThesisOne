@@ -13,7 +13,7 @@ const Sidebar = ({ isOpen, toggleSidebar, togglePricingModal, toggleSettingsModa
 
   const fetchInvitations = async () => {
     try {
-      const res = await axios.get('http://localhost:5001/api/invitations', {
+      const res = await axios.get('https://vandralthesisone.onrender.com/api/invitations', {
         headers: { 'auth-token': localStorage.getItem('token') }
       });
       setInvitations(res.data);
@@ -25,7 +25,7 @@ const Sidebar = ({ isOpen, toggleSidebar, togglePricingModal, toggleSettingsModa
   const fetchPresentations = async () => {
     if (!workspace) return;
     try {
-      const res = await axios.get(`http://localhost:5001/api/presentations?workspaceId=${workspace._id}`, {
+      const res = await axios.get(`https://vandralthesisone.onrender.com/api/presentations?workspaceId=${workspace._id}`, {
         headers: { 'auth-token': localStorage.getItem('token') }
       });
       setPresentations(res.data);
@@ -52,7 +52,7 @@ const Sidebar = ({ isOpen, toggleSidebar, togglePricingModal, toggleSettingsModa
 
   const handleAcceptInvite = async (id) => {
     try {
-      await axios.post(`http://localhost:5001/api/invitations/${id}/accept`, {}, {
+      await axios.post(`https://vandralthesisone.onrender.com/api/invitations/${id}/accept`, {}, {
         headers: { 'auth-token': localStorage.getItem('token') }
       });
       toast.success('Invitation accepted!');
@@ -79,7 +79,7 @@ const Sidebar = ({ isOpen, toggleSidebar, togglePricingModal, toggleSettingsModa
   const handleDeletePresentation = async (presentationId) => {
     if (!window.confirm('Are you sure you want to delete this presentation?')) return;
     try {
-      await axios.delete(`http://localhost:5001/api/presentations/${presentationId}`, {
+      await axios.delete(`https://vandralthesisone.onrender.com/api/presentations/${presentationId}`, {
         headers: { 'auth-token': localStorage.getItem('token') }
       });
       toast.success('Presentation deleted!');

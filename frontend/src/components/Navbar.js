@@ -32,7 +32,7 @@ const Navbar = () => {
                             'auth-token': token
                         }
                     };
-                    const res = await axios.get('http://localhost:5001/api/user/me', config);
+                    const res = await axios.get('https://vandralthesisone.onrender.com/api/user/me', config);
                     setUser(res.data);
                 } catch (err) {
                     // If token is invalid or expired, remove it

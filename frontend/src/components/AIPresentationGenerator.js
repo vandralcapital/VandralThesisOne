@@ -65,7 +65,7 @@ Structure the deck with a narrative flow, outlining problem -> solution, highlig
 
     try {
       const response = await axios.post(
-        'http://localhost:5001/api/presentations/generate-storyline',
+        'https://vandralthesisone.onrender.com/api/presentations/generate-storyline',
         { topic: topic.trim() },
         { headers: { 'auth-token': localStorage.getItem('token') } }
       );
@@ -92,7 +92,7 @@ Structure the deck with a narrative flow, outlining problem -> solution, highlig
     
     try {
       const response = await axios.post(
-        'http://localhost:5001/api/presentations/generate',
+        'https://vandralthesisone.onrender.com/api/presentations/generate',
         {
           storyline: storyline,
           workspaceId: workspace._id
